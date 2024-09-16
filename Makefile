@@ -1,7 +1,8 @@
 run: build
+	@go run main.go
 
 templ:
-	@templ generate -watch -proxy=http://localhost:8080
+	@templ generate -watch -proxy=http://localhost:8090
 
 tailwind:
 	tailwindcss -i ./static/css/input.css -o ./static/css/output.css --watch

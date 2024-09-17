@@ -2,26 +2,25 @@ package template
 
 import "portfolio/internal/component"
 
-templ Base() {
+templ Base(title string) {
     <html>
         <head>
             <meta charset="UTF-8"></meta>
             <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
             <script src="https://unpkg.com/htmx.org@1.9.11"></script>
             <link rel="stylesheet" href="/static/css/output.css"></link>
-            <title>Christopher Mejia</title>
+            <title>{title}</title>
         </head>
-        <body class="bg-gradient-to-t from-[#fbc2eb] to-[#a6c1ee] h-screen">
-            <main class="p-6 grid gap-4">
+        <body class="bg-black">
+            <main class="">
                 { children... }
             </main>
         </body>
     </html>
 }
 
-
-templ Home() {
-    @Base() {
-        @component.Hello()
+templ Home(title string) {
+    @Base(title) {
+        @component.Terminal()
     }
 }
